@@ -78,6 +78,37 @@
       text-decoration: none;
       font-weight: bold;
       margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .arrow-left, .arrow-right {
+      font-size: 1.5em;
+      margin: 0 10px;
+    }
+
+    /* Horizontal slideshow container */
+    .slideshow-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none; /* Hide scrollbar */
+      -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+    }
+
+    .slideshow-container::-webkit-scrollbar {
+      display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+    }
+
+    /* Individual skill card */
+    .skill-card {
+      flex: 0 0 auto;
+      width: 80%;
+      scroll-snap-align: start;
+      background-color: #1F1F1F;
+      border-radius: 10px;
+      padding: 20px;
+      margin-right: 20px;
+      text-align: left;
     }
   </style>
 </head>
@@ -98,7 +129,7 @@
       <section id="about" class="section">
         <h2>About Me</h2>
         <p>
-          Hello! I'm Akash Verma, a passionate Computer Science graduate from Uttarakhand. Currently, based in Pune, India, with a dedication to mastering the dynamic field of Dev-Sec-Ops. With a passion for thriving under pressure and excelling in collaborative environments, I bring a unique blend of technical expertise, adaptability, and continuous learning to every project I undertake.
+          Hello! I'm Akash Verma, a passionate Computer Science graduate from Uttarakhand. Currently, based in Pune, India, with a dedication to mastering the dynamic field of Dev-Sec-Ops. With a knack for thriving under pressure and excelling in collaborative environments, I bring a unique blend of technical expertise, adaptability, and continuous learning to every project I undertake.
         </p>
       </section>
 
@@ -127,12 +158,34 @@
       <!-- Technical Skills Section -->
       <section id="technical-skills" class="section">
         <h2>Technical Skills</h2>
-        <!-- Include Technical Skills from resume here -->
-        <p>Technical skills details will go here.</p>
+        <div class="slideshow-container">
+          <!-- Individual skill cards -->
+          <div class="skill-card">
+            <h3>Programming / Automation</h3>
+            <p>Python, Bash, Shell</p>
+          </div>
+          <div class="skill-card">
+            <h3>DevOps Tools</h3>
+            <p>Git, Jenkins, Terraform, Docker</p>
+          </div>
+          <div class="skill-card">
+            <h3>Database</h3>
+            <p>MariaDB, MySQL, Amazon RDS</p>
+          </div>
+          <div class="skill-card">
+            <h3>Security Tools</h3>
+            <p>Wireshark, Nessus, Splunk Enterprise, Nmap</p>
+          </div>
+          <div class="skill-card">
+            <h3>Operating systems</h3>
+            <p>Linux, Windows</p>
+          </div>
+          <div class="skill-card">
+            <h3>Cloud Infrastructure</h3>
+            <p>AWS, GCP</p>
+          </div>
+        </div>
       </section>
-
-      <!-- Button for sliding through skill sections -->
-      <a href="#summary" class="button">Next Section</a>
     </div>
   </main>
 
@@ -143,5 +196,20 @@
     </div>
   </footer>
 
+  <!-- JavaScript for sliding through skill sections -->
+  <script>
+    // Get the container for the skill cards
+    const slideshowContainer = document.querySelector('.slideshow-container');
+
+    // Scroll to the next skill card
+    function nextSkill() {
+      slideshowContainer.scrollBy({ left: window.innerWidth, behavior: 'smooth' });
+    }
+
+    // Scroll to the previous skill card
+    function prevSkill() {
+      slideshowContainer.scrollBy({ left: -window.innerWidth, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
