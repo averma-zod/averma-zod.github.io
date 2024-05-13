@@ -71,7 +71,6 @@ footer {
   text-align: center;
 }
 
-
 .timeline {
   width: 600px;
   margin: 50px auto;
@@ -79,14 +78,20 @@ footer {
 }
 
 #pipe {
-  border: 2px solid #ccc;
+  border: 2px solid #333;
   border-radius: 10px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .point {
   fill: #007bff;
   cursor: pointer;
+}
+
+.date {
+  font-size: 12px;
+  text-anchor: middle;
+  fill: #000; /* Changed date text color to black */
 }
 
 .overlay {
@@ -99,7 +104,7 @@ footer {
   color: #fff;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .overlay-content {
