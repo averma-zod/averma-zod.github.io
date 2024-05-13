@@ -70,3 +70,42 @@ footer {
   padding: 20px 0;
   text-align: center;
 }
+
+
+.timeline {
+  width: 600px;
+  margin: 50px auto;
+  position: relative;
+}
+
+#pipe {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.point {
+  fill: #007bff;
+  cursor: pointer;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.overlay-content {
+  text-align: center;
+}
+
+.overlay-content #company-details {
+  margin-top: 10px;
+}
