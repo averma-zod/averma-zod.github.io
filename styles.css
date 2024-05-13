@@ -53,12 +53,29 @@ h2 {
   margin-bottom: 30px;
 }
 
+/* Updated styling for skills section */
+.skills-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  width: calc(50% - 10px); /* Adjusted width to fit two columns with a small gap */
+}
+
 .skills-list {
-  columns: 2;
   list-style: none;
+  padding-left: 0;
 }
 
 .skills-list li {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.skill-category {
+  font-weight: bold;
+  color: #007bff; /* Blue color for skill categories */
 }
 
 .project {
