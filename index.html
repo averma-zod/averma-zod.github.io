@@ -52,6 +52,26 @@
       </div>
     </section>
 
+    <section>
+       <div class="timeline">
+    <svg id="pipe" viewBox="0 0 600 100">
+      <!-- Draw the pipe with border and shadows -->
+      <path d="M0 50 H600" stroke="#999" stroke-width="5" fill="none" />
+      <!-- Points representing companies -->
+      <circle class="point" cx="100" cy="50" r="10" data-company="Company A" data-details="Worked as a DevOps Engineer. Implemented CI/CD pipelines using Jenkins. Managed Kubernetes clusters." />
+      <circle class="point" cx="300" cy="50" r="10" data-company="Company B" data-details="Senior DevOps Engineer. Led automation efforts using Terraform. Implemented monitoring solutions with Prometheus and Grafana." />
+    </svg>
+  </div>
+
+  <!-- Overlay display for company details -->
+  <div class="overlay" id="overlay">
+    <div class="overlay-content">
+      <div id="company-name">Hover over a company</div>
+      <div id="company-details"></div>
+    </div>
+  </div>
+    </section>
+
     <!-- Projects Section -->
     <section id="projects" class="section">
       <div class="container">
@@ -87,6 +107,25 @@
         });
       });
     });
+
+const points = document.querySelectorAll('.point');
+const overlay = document.getElementById('overlay');
+const companyName = document.getElementById('company-name');
+const companyDetails = document.getElementById('company-details');
+
+points.forEach(point => {
+  point.addEventListener('mouseenter', () => {
+    companyName.textContent = point.getAttribute('data-company');
+    companyDetails.textContent = point.getAttribute('data-details');
+    overlay.style.display = 'block';
+  });
+
+  point.addEventListener('mouseleave', () => {
+    overlay.style.display = 'none';
+  });
+});
+
+    
   </script>
 
 </body>
