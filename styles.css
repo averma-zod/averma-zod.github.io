@@ -91,7 +91,7 @@ footer {
 .date {
   font-size: 12px;
   text-anchor: middle;
-  fill: #000; /* Changed date text color to black */
+  fill: blue;
 }
 
 .overlay {
