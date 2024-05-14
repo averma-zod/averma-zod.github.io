@@ -56,7 +56,7 @@
       <h1>Akash Verma | Portfolio</h1>
       <nav>
         <ul>
-          <li><a href="https://averma-zod.github.io/about/about.html">About</a></li>
+          <li><a href="#" onclick="loadContent('https://averma-zod.github.io/about/about.html',>About</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="https://averma-zod.github.io/resume/res.html">Resume</a></li>
@@ -187,7 +187,20 @@
       });
     });
 
-
+function loadContent(url, sectionId) {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        document.getElementById(sectionId).innerHTML = xhr.responseText;
+      } else {
+        console.error('Error loading content');
+      }
+    }
+  };
+  xhr.open('GET', url, true);
+  xhr.send();
+}
   </script>
 
 </body>
